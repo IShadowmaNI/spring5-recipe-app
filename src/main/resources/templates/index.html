@@ -18,8 +18,9 @@
             crossorigin="anonymous" th:src="@{/webjars/bootstrap/5.2.1/dist/js/bootstrap.min.js}"></script>
 
 </head>
+<!--/*@thymesVar id="recipes" type="java.util.List"*/-->
+<!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
 <body>
-
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-6 offset-md-3">
@@ -35,23 +36,26 @@
                                 <th>ID</th>
                                 <th>Description</th>
                                 <th>View</th>
+                                <th>Update</th>
                             </tr>
                             </thead>
                             <tr th:remove="all">
                                 <td>1</td>
                                 <td>Description placeholder 1</td>
                                 <td><a href="#">View</a></td>
+                                <td><a href="#">Update</a></td>
                             </tr>
                             <tr th:remove="all">
                                 <td>2</td>
                                 <td>Description placeholder 2</td>
                                 <td><a href="#">View</a></td>
+                                <td><a href="#">Update</a></td>
                             </tr>
                             <tr th:each="recipe : ${recipes}">
-                                <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                                 <td th:text="${recipe.id}">3</td>
                                 <td th:text="${recipe.description}">Description placeholder 3</td>
-                                <td><a href="#" th:href="@{'recipe/show/' + ${recipe.id}}">View</a></td>
+                                <td><a href="#" th:href="@{'recipe/' + ${recipe.id} + '/show/'}">View</a></td>
+                                <td><a href="#" th:href="@{'/recipe/' + ${recipe.id} + '/update'}">Update</a></td>
                             </tr>
                         </table>
                     </div>
