@@ -18,12 +18,12 @@
             crossorigin="anonymous" th:src="@{/webjars/bootstrap/5.2.1/dist/js/bootstrap.min.js}"></script>
 </head>
 <body class="bg-dark">
+<!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
 <div class="container-fluid w-75 h-25 p-3" style="margin-top: 20px">
     <div class="row row-cols-1">
         <div class="col">
             <div class="card border-primary mb-3">
                 <div class="card-header text-bg-primary">
-                    <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                     <h1 class="card-title fs-4" th:text="${recipe.description}">Recipe Description Here!</h1>
                 </div>
                 <div class="card-body fs-6 bg-light">
@@ -35,7 +35,6 @@
                             <ul>
                                 <li th:remove="all">cat one</li>
                                 <li th:remove="all">cat two</li>
-                                <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                                 <li th:each="category : ${recipe.categories}" th:text="${category.getDescription()}">cat
                                     three
                                 </li>
@@ -47,14 +46,12 @@
                             <h5>Prep Time:</h5>
                         </div>
                         <div class="col-md-3">
-                            <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                             <p th:text="${(recipe.prepTime + ' min')}">30 min</p>
                         </div>
                         <div class="col-md-3">
                             <h5>Difficulty:</h5>
                         </div>
                         <div class="col-md-3">
-                            <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                             <p th:text="${recipe.difficulty}">Easy</p>
                         </div>
                     </div>
@@ -83,7 +80,7 @@
                             <h5>URL:</h5>
                         </div>
                         <div class="col-md-3">
-                            <p th:text="${recipe.url}">http://www.example.com</p>
+                            <p><a href="#" th:href="@{'http://' + ${recipe.url}}">View Original</a></p>
                         </div>
                     </div>
                 </div>
@@ -100,7 +97,6 @@
                             <ul>
                                 <li th:remove="all">1 Cup of milk</li>
                                 <li th:remove="all">1 Teaspoon of chocolate</li>
-                                <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                                 <li th:each="ingredient : ${recipe.ingredients}"
                                     th:text="${ingredient.getAmount() + ' ' +
                                                 ingredient.getUom().getDescription() + ' - ' +
@@ -120,7 +116,6 @@
                 <div class="card-body fs-6 bg-light">
                     <div class="row">
                         <div class="col-md-12">
-                            <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                             <p th:text="${recipe.getDirections()}">Lorem ipsum dolor sit amet, consectetuer adipiscing
                                 elit. Aenean commodo ligula eget
                                 dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
@@ -147,7 +142,6 @@
                 <div class="card-body fs-6 bg-light">
                     <div class="row">
                         <div class="col-md-12">
-                            <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                             <p th:text="${recipe.getNotes().getRecipeNotes()}">Lorem ipsum dolor sit amet, consectetuer
                                 adipiscing elit. Aenean commodo ligula eget
                                 dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
