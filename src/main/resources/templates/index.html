@@ -20,15 +20,15 @@
 </head>
 <!--/*@thymesVar id="recipes" type="java.util.List"*/-->
 <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
-<body>
+<body class="bg-dark">
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <div class="card card-header-pills border-primary mb-3">
+            <div class="card border-primary mb-3">
                 <div class="card-header text-bg-primary">
-                    <h1 class="card-title">My Recipes!</h1>
+                    <h1 class="card-title fs-4">My Recipes!</h1>
                 </div>
-                <div class="card-body">
+                <div class="card-body fs-6">
                     <div class="table-responsive" th:if="${not #lists.isEmpty(recipes)}">
                         <table class="table table-hover">
                             <thead>
@@ -45,12 +45,14 @@
                                 <td>Description placeholder 1</td>
                                 <td><a href="#">View</a></td>
                                 <td><a href="#">Update</a></td>
+                                <td><a href="#">Delete</a></td>
                             </tr>
                             <tr th:remove="all">
                                 <td>2</td>
                                 <td>Description placeholder 2</td>
                                 <td><a href="#">View</a></td>
                                 <td><a href="#">Update</a></td>
+                                <td><a href="#">Delete</a></td>
                             </tr>
                             <tr th:each="recipe : ${recipes}">
                                 <td th:text="${recipe.id}">3</td>
