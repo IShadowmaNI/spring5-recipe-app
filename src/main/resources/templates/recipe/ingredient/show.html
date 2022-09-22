@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Ingredient</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/5.2.1/dist/css/bootstrap.min.css}">
+
+    <script src="/webjars/jquery/3.6.1/dist/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/5.2.1/dist/js/bootstrap.min.js}"></script>
+</head>
+<body class="bg-dark">
+<!--/*@thymesVar id="ingredient" type="guru.springframework.commands.IngredientCommand"*/-->
+<div class="container-fluid p-3" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card border-primary">
+                <div class="card-header text-bg-primary">
+                    <h1 class="card-title fs-4">Ingredient</h1>
+                </div>
+                <div class="card-body fs-6">
+                    <div class="table-responsive">
+                        <table class="table table-hover ">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tr th:remove="all">
+                                <td>7</td>
+                                <td>Placeholder 1</td>
+                            </tr>
+                            <tr>
+                                <td th:text="${ingredient.id}">8</td>
+                                <td th:text="${ingredient.amount} + ' ' + ${ingredient.uom.getDescription()} + ' ' + ${ingredient.description}">Placeholder 2</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

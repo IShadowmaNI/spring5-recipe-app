@@ -17,8 +17,8 @@ class IngredientToIngredientCommandTest {
     public static final Recipe RECIPE = new Recipe();
     public static final BigDecimal AMOUNT = new BigDecimal("1");
     public static final String DESCRIPTION = "Some Food";
-    public static final Long ID_VALUE = Long.valueOf(1L);
-    public static final Long UOM_ID = Long.valueOf(2L);
+    public static final Long ID_VALUE = 1L;
+    public static final Long UOM_ID = 2L;
 
     IngredientToIngredientCommand converter;
 
