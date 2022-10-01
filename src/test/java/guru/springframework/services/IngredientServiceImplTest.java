@@ -52,6 +52,10 @@ class IngredientServiceImplTest {
     }
 
     @Test
+    public void findByRecipeIdAndId() throws Exception {
+    }
+
+    @Test
     public void findByRecipeIdAndRecipeIdHappyPath() throws Exception {
         //given
         Recipe recipe = new Recipe();
